@@ -27,8 +27,9 @@ import Contact from './pages/Contact'
 import LogIn from './pages/LogIn'
 import Signup from './pages/Signup'
 import AddToCart from './pages/AddToCart'
-import { BrowserRouter as Router, Routes, Route, createBrowserRouter} from 'react-router-dom';
-import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
+
+import {CartContextContainer} from './store/CartContext'
 
 
 
@@ -63,131 +64,130 @@ const HomeCardData1=[
   {
     CartImage:homecart1,
     CartTitle:"addidas",
-    CartDescription:"Cartoon Astronaut T-shirt"
+    CartDescription:"Cartoon Astronaut T-shirt",
+    price:700
   },
   {
     CartImage:homecart2,
     CartTitle:"addidas",
-    CartDescription:"Cartoon Astronaut T-shirt"
+    CartDescription:"Cartoon Astronaut T-shirt",
+    price:900
   },
   {
     CartImage:homecart3,
     CartTitle:"addidas",
-    CartDescription:"Cartoon Astronaut T-shirt"
+    CartDescription:"Cartoon Astronaut T-shirt",
+    price:600
   },
   {
     CartImage:homecart4,
     CartTitle:"addidas",
-    CartDescription:"Cartoon Astronaut T-shirt"
+    CartDescription:"Cartoon Astronaut T-shirt",
+    price:400
   },
   {
     CartImage:homecart5,
     CartTitle:"addidas",
-    CartDescription:"Cartoon Astronaut T-shirt"
+    CartDescription:"Cartoon Astronaut T-shirt",
+    price:600
   },
   {
     CartImage:homecart6,
     CartTitle:"addidas",
-    CartDescription:"Cartoon Astronaut T-shirt"
+    CartDescription:"Cartoon Astronaut T-shirt",
+    price:700
   },
   {
     CartImage:homecart7,
     CartTitle:"addidas",
-    CartDescription:"Cartoon Astronaut T-shirt"
+    CartDescription:"Cartoon Astronaut T-shirt",
+    price:500
   },
   {
     CartImage:homecart8,
     CartTitle:"addidas",
-    CartDescription:"Cartoon Astronaut T-shirt"
+    CartDescription:"Cartoon Astronaut T-shirt",
+    price:800
   },
 ]
 const HomeCardData2=[
   {
     CartImage:homecart9,
     CartTitle:"addidas",
-    CartDescription:"Cartoon Astronaut T-shirt"
+    CartDescription:"Cartoon Astronaut T-shirt",
+    price:500
   },
   {
     CartImage:homecart10,
     CartTitle:"addidas",
-    CartDescription:"Cartoon Astronaut T-shirt"
+    CartDescription:"Cartoon Astronaut T-shirt", 
+    price:900
   },
   {
     CartImage:homecart11,
     CartTitle:"addidas",
-    CartDescription:"Cartoon Astronaut T-shirt"
+    CartDescription:"Cartoon Astronaut T-shirt",
+    price:600
   },
   {
     CartImage:homecart12,
     CartTitle:"addidas",
-    CartDescription:"Cartoon Astronaut T-shirt"
+    CartDescription:"Cartoon Astronaut T-shirt",
+    price:400
   },
   {
     CartImage:homecart13,
     CartTitle:"addidas",
-    CartDescription:"Cartoon Astronaut T-shirt"
+    CartDescription:"Cartoon Astronaut T-shirt",
+    price:800
   },
   {
     CartImage:homecart14,
     CartTitle:"addidas",
-    CartDescription:"Cartoon Astronaut T-shirt"
+    CartDescription:"Cartoon Astronaut T-shirt",
+    price:700
   },
   {
     CartImage:homecart15,
     CartTitle:"addidas",
-    CartDescription:"Cartoon Astronaut T-shirt"
+    CartDescription:"Cartoon Astronaut T-shirt",
+    price:300
   },
   {
     CartImage:homecart16,
     CartTitle:"addidas",
-    CartDescription:"Cartoon Astronaut T-shirt"
+    CartDescription:"Cartoon Astronaut T-shirt",
+    price:600
   },
 ]
-const cart1=[
-  {
-    image:image1,
-    productName:"akshay",
-    description:"hello my name is akshay",
-    price:"200"
-  },
-  {
-    image:image1,
-    productName:"akshay",
-    description:"hello my name is akshay",
-    price:"200"
-  },
-  {
-    image:image1,
-    productName:"akshay",
-    description:"hello my name is akshay",
-    price:"200"
-  },
-]
+
+
 
 
 
 function App() {
   
-  const [cart , setcart]=useState(cart1) 
+ 
+  
   
   return (
     
-    <>
+    <CartContextContainer>
     <Router>
 
       <Routes>
         <Route path="/" element={<Home Logodata={Logodata} HomeCardData1={HomeCardData1} HomeCardData2={HomeCardData2} />} />
-        <Route path="/shop" element={<Shop HomeCardData2={HomeCardData2} HomeCardData1={HomeCardData1} />} />
+        <Route path="/shop" element={<Shop HomeCardData2={HomeCardData2} HomeCardData1={HomeCardData1}  />} />
         <Route path="/about" element={<About Logodata={Logodata} />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/addTocart" element={<AddToCart cart={cart}  />} />
+        <Route path="/addTocart" element={<AddToCart   />} />
         <Route path="/login" element={< LogIn/>} />
         <Route path="/signup" element={< Signup/>} />
        
       </Routes>
 </Router>
     
-    </>
+    </CartContextContainer>
   )
 }
 

@@ -16,7 +16,7 @@ import NewsBar from '../components/NewsBar'
 
 
 
-function Home({Logodata,HomeCardData1,HomeCardData2}) {
+function Home({Logodata,HomeCardData1,HomeCardData2  }) {
   return (
     <div className='h-full'>
         <Header/>
@@ -24,7 +24,7 @@ function Home({Logodata,HomeCardData1,HomeCardData2}) {
         <List_logobox  Logodata={Logodata}  />
         <Feature/>
         
-        <CardList HomeCardData={HomeCardData1}/>
+        <CardList HomeCardData={HomeCardData1}  />
         <div className="w-screen flex flex-col items-center text-slate-50 bg-slate-800 mt-14 mb-2 shadow-md shadow-gray-700">
             <h3 className="text-xl font-semibold mt-5 ">Repair Service</h3>
             <h1 className="text-5xl font-bold py-4">Up to <strong className="text-red-700">70% off</strong> -All t-shirt & Accessories</h1>

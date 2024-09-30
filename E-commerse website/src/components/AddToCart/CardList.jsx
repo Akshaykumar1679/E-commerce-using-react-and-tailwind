@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Card2 from './Card2'
+import CardContext from '../../store/CartContext'
 
-function CardList({cart }) {
+function CardList() {
+const {cart } = useContext(CardContext)
   return (
     <div>
         {
