@@ -65,7 +65,7 @@ function Header() {
             <li className=" hover:scale-110 ">
               <NavLink
                 className="bg-blue-600 rounded-full px-2 py-1 text-white font-semibold"
-                to="/login"
+                to="/auth/login"
               >
                 logIn/SignIn
               </NavLink>
